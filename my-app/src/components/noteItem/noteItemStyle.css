@@ -1,0 +1,73 @@
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width:795px;
+  border: 1px solid teal;
+  border-radius: 4px;
+  margin: 5px auto;
+  background-color: whitesmoke;
+}
+/* .todo-item-date-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  color: black;
+} */
+
+.note_contetnt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width:100%;
+  border: none;
+  margin: 2px 0;
+  background-color: whitesmoke;
+  
+}
+
+.note_contetnt__main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  font-size: 1.5rem;
+}
+.note-item_title {
+  text-align: left;
+  overflow: hidden;
+  word-break: break-word;
+  border-bottom: 1px solid teal;
+  border-bottom-width: 90%;
+}
+.note-item_description {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: justify;
+  overflow: hidden;
+  word-break: break-word;
+  padding: 2.5px;
+  width: 100%;
+  min-height: 100px;
+}
+.todo-btn-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;  
+}
+.check-todo-text-block input {
+  width:5px;
+  height: 5px;
+  margin-left: 3px;
+}
+.check {
+  background-color: green ;
+  transition: 0.1ms;
+}
