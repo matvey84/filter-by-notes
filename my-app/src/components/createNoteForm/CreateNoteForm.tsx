@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppDispatch } from '../../redux/hooks';
-import { setNoteToList } from '../../redux/note-slice/noteSlice';
+import { setNoteToListAction } from '../../redux/note-slice/noteSlice';
 import { INote, INoteFormData } from '../../types/type';
 import './createNoteFormStyle.css';
 
@@ -22,7 +22,7 @@ export default function CreateNoteForm() {
       description: formData.description,
     };
     console.log(currentNote);
-    dispatch(setNoteToList(currentNote));
+    dispatch(setNoteToListAction(currentNote));
   };
 
   useEffect(() => {
