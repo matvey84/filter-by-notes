@@ -10,13 +10,17 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import noteSlice from './note-slice/noteSlice';
+
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
 };
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  noteSlice,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
@@ -33,11 +37,11 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
+// export type AppThunk<ReturnType = void> = ThunkAction<
+//   ReturnType,
+//   RootState,
+//   unknown,
+//   Action<string>
+// >;
 
 export const persistor = persistStore(store);
