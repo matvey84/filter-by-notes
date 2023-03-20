@@ -1,0 +1,22 @@
+.note-form {
+  width: 595px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  background-color: burlywood;
+  border-radius: 4px;
+}
+.note-form-input {
+  width: 585px;
+  height: 25px;
+  margin: 1.5px 2.5px;
+}
+.note-form_submit-button {
+  width: 590px;
+  height: 25px;
+  margin: 1.5px 2.5px;
+}
+
