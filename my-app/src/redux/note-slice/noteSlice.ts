@@ -17,10 +17,13 @@ export const noteSlice = createSlice({
   name: 'note',
   initialState,
   reducers: {
-    setNoteToList(state, action: PayloadAction<INote>) {
+    setNoteToListAction(state, action: PayloadAction<INote>) {
       state.noteList = [...state.noteList, action.payload];
+    },
+    removeNoteFromListAction(state, action: PayloadAction<string>) {
+      state.noteList = state.noteList.filter((note) => note.id !== action.payload);
     },
   },
 });
-export const { setNoteToList } = noteSlice.actions;
+export const { setNoteToListAction, removeNoteFromListAction } = noteSlice.actions;
 export default noteSlice.reducer;
