@@ -17,15 +17,13 @@ function NoteItem(props: IProp) {
       {isEdit ? (
         <EditNoteForm id={id} setIsEdit={setIsEdit} isEdit={isEdit} />
       ) : (
-        <div className="note" id={id}>
+        <div className={isEdit ? 'hide-note' : 'note'} id={id}>
           {/* <div className="todo-item-date-block">
             <span className="add-todo">Add: {props.todo.date}</span>
           </div> */}
           <div className="note_contetnt">
-            <div id={id} className="note_contetnt__main-info">
-              <h3 className="note-item_title">{title}</h3>
-              <div className="note-item_description">{description}</div>
-            </div>
+            <h3 className="note-item_title">{title}</h3>
+            <div className="note-item_description">{description}</div>
             <div id={id} className=" todo-btn-block">
               <ButtonEditNote id={id} setIsEdit={setIsEdit} isEdit={isEdit} />
               <ButtonRemoveCurrentNote id={id} />
