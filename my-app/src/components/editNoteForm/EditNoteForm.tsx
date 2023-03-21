@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { editNoteAction, setNoteToListAction } from '../../redux/note-slice/noteSlice';
+import { editNoteAction } from '../../redux/note-slice/noteSlice';
 import { INoteFormData, INote } from '../../types/type';
 interface IProp {
   id: string;
-  setIsChange: (isChange: boolean) => void;
-  isChange: boolean;
+  setIsEdit: (isEdit: boolean) => void;
+  isEdit: boolean;
 }
 function EditNoteForm(props: IProp) {
   const editedNoteid = props.id;
-  const setIsChange = props.setIsChange;
-  const isChange = props.isChange;
+  const setIsEdit = props.setIsEdit;
+  const isEdit = props.isEdit;
   const currentNote: INote = useAppSelector((state) =>
     state.noteSlice.noteList.filter((note) => note.id === editedNoteid).at(-1)
   )!;
@@ -37,7 +37,8 @@ function EditNoteForm(props: IProp) {
     formData.title === currentNote.title && formData.description === currentNote.description
       ? null
       : dispatch(editNoteAction(newNoteValue));
-    setIsChange(!isChange);
+
+    setIsEdit(!isEdit);
   };
 
   return (
