@@ -33,7 +33,15 @@ export const noteSlice = createSlice({
         };
       });
     },
+    removeCurrentNoteAction(state, action: PayloadAction<string>) {
+      state.noteList = state.noteList.filter((note) => note.id !== action.payload);
+    },
   },
 });
-export const { setNoteToListAction, removeNoteFromListAction, editNoteAction } = noteSlice.actions;
+export const {
+  setNoteToListAction,
+  removeNoteFromListAction,
+  editNoteAction,
+  removeCurrentNoteAction,
+} = noteSlice.actions;
 export default noteSlice.reducer;

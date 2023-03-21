@@ -1,0 +1,38 @@
+.button-edit-note,
+.button-delete-note {
+    width: 22px;
+    height: 22px;
+    background-color: initial;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin: 0 4px 0 4px;
+}
+
+.button-delete-note {
+    width: 25px;
+    height: 25px;
+}
+
+
+.button-delete-note svg {
+    height: 100%;
+    width: 100%;
+}
+
+.button-edit-note .svg-icon {
+  overflow: hidden;
+  height: 85%;
+  width: 85%;
+}
+
+.button-edit-note .svg-icon path {
+  fill: mediumblue;
+  height: 90%;
+  width: 90%;
+}
+
+.button-delete-note svg path {
+    fill: #ff7878;
+}
+
