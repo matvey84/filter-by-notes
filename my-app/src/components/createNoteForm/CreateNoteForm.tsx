@@ -32,31 +32,37 @@ export default function CreateNoteForm() {
     <>
       <h1>Create your note</h1>
       <form className="note-form" onSubmit={handleSubmit(noteCreateHandler)}>
-        <input
-          {...register('title', {
-            required: 'This field is required',
-            minLength: {
-              value: 5,
-              message: 'Should be min 5 character',
-            },
-          })}
-          className="note-form-input note-form-input_title"
-          type="text"
-          placeholder="Add your todo"
-        />
-        <input
-          autoComplete="off"
-          {...register('description', {
-            required: 'This field is requaered',
-            minLength: {
-              value: 5,
-              message: 'Should be min 5 character',
-            },
-          })}
-          type="text"
-          placeholder="description"
-          className="note-form-input note-form-input_description"
-        />
+        <fieldset form="note-title">
+          <legend> Note title</legend>
+          <input
+            {...register('title', {
+              required: 'This field is required',
+              minLength: {
+                value: 5,
+                message: 'Should be min 5 character',
+              },
+            })}
+            className="note-form-input_title"
+            type="text"
+            id="note-title"
+            placeholder="Title"
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Description</legend>
+          <textarea
+            {...register('description', {
+              required: 'This field is requaered',
+              minLength: {
+                value: 5,
+                message: 'Should be min 5 character',
+              },
+            })}
+            placeholder="Description"
+            className="note-form-input_description"
+          />
+        </fieldset>
+
         <button disabled={!isValid} className="note-form_submit-button" type="submit">
           Add new note
         </button>
