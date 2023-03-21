@@ -61,7 +61,6 @@ export default function CreateNoteForm() {
           Add new note
         </button>
       </form>
-      <div className="progress-and-remove-block"></div>
     </>
   );
 }
