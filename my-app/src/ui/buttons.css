@@ -1,19 +1,18 @@
 .button-edit-note,
 .button-delete-note {
-    width: 22px;
-    height: 22px;
-    background-color: initial;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    margin: 0 4px 0 4px;
-}
-
-.button-delete-note {
     width: 25px;
     height: 25px;
+    background-color: initial;
+    border: none;
+    cursor: pointer;
+    margin: auto 5px auto 4px;
 }
 
+.button-edit-note:hover,
+.button-delete-note:hover {
+    outline: 1px solid var(--main-color);
+    border-radius: 3px;
+}
 
 .button-delete-note svg {
     height: 100%;
@@ -26,13 +25,28 @@
   width: 85%;
 }
 
+
 .button-edit-note .svg-icon path {
-  fill: mediumblue;
+  fill: var(--main-color);
   height: 90%;
   width: 90%;
 }
+.button-edit-note:active,
+.button-delete-note:active {
+  background: var(--main-color);
+  border-radius: 3px;
+}
+
+.button-edit-note:active .svg-icon path,
+.button-delete-note:active svg path {
+  fill: black;
+}
+
 
 .button-delete-note svg path {
-    fill: #ff7878;
+    fill: red;
+}
+.button-delete-note:active svg path {
+  fill: red;
 }
 
