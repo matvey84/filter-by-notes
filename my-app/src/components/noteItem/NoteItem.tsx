@@ -126,6 +126,7 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../redux/hooks';
 import { removeNoteFromListAction } from '../../redux/note-slice/noteSlice';
 import { INote } from '../../types/type';
+import EditNoteForm from '../editNoteForm/EditNoteForm';
 import './noteItemStyle.css';
 interface IProp {
   index: number;
@@ -145,7 +146,7 @@ function NoteItem(props: IProp) {
   return (
     <>
       {isChange ? (
-        <p> Change</p>
+        <EditNoteForm id={id} setIsChange={setIsChange} isChange={isChange} />
       ) : (
         <div className="note" id={id}>
           {/* <div className="todo-item-date-block">

@@ -23,7 +23,17 @@ export const noteSlice = createSlice({
     removeNoteFromListAction(state, action: PayloadAction<string>) {
       state.noteList = state.noteList.filter((note) => note.id !== action.payload);
     },
+    editNoteAction(state, action: PayloadAction<INote>) {
+      state.noteList = state.noteList.map((note) => {
+        return {
+          ...note,
+          title: note.id === action.payload.id ? action.payload.title : note.title,
+          description:
+            note.id === action.payload.id ? action.payload.description : note.description,
+        };
+      });
+    },
   },
 });
-export const { setNoteToListAction, removeNoteFromListAction } = noteSlice.actions;
+export const { setNoteToListAction, removeNoteFromListAction, editNoteAction } = noteSlice.actions;
 export default noteSlice.reducer;
