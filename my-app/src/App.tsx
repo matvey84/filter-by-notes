@@ -6,8 +6,10 @@ import NoteList from './components/noteList/NoteList';
 function App() {
   return (
     <div className="App">
-      <CreateNoteForm />
-      <NoteList />
+      <div className="container">
+        <CreateNoteForm />
+        <NoteList />
+      </div>
     </div>
   );
 }
