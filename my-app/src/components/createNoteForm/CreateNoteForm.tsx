@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppDispatch } from '../../redux/hooks';
 import { resetFilterAction, setNoteToListAction } from '../../redux/note-slice/noteSlice';
 import { INote, INoteFormData } from '../../types/type';
+import ButtonCreateNote from '../../ui/ButtonCreateNote';
 import './createNoteFormStyle.css';
 
 export default function CreateNoteForm() {
@@ -67,10 +68,7 @@ export default function CreateNoteForm() {
             className="note-form-input_description"
           />
         </fieldset>
-
-        <button disabled={!isValid} className="note-form_submit-button" type="submit">
-          Add new note
-        </button>
+        <ButtonCreateNote isValid={isValid} />
       </form>
     </>
   );

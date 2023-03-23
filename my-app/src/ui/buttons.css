@@ -119,3 +119,33 @@
   border-color: var(--main-color);
 }
 
+.note-form_submit-button svg {
+  height: 100%;
+  width: 25px;
+}
+.note-form_submit-button svg g {
+  stroke: none; 
+  stroke-width: 0; 
+  stroke-dasharray: none; 
+  stroke-linecap: butt; 
+  stroke-linejoin: miter; 
+  stroke-miterlimit: 10; 
+  fill: none; 
+  fill-rule: nonzero; 
+  opacity: 1;
+  transform: translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81);
+}
+.note-form_submit-button svg g polygon {
+  stroke: none; 
+  stroke-width: 1; 
+  stroke-dasharray: none; 
+  stroke-linecap: butt; 
+  stroke-linejoin: miter; 
+  stroke-miterlimit: 10; 
+  fill: var(--main-color); 
+  fill-rule: nonzero; 
+  opacity: 1;
+  transform: matrix(1 0 0 1 0 0)
+}
+
+
