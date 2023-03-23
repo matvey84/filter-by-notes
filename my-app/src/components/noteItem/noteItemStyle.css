@@ -58,3 +58,8 @@
   padding: 2.5px;
   border-bottom-left-radius: 3px;
 }
+.hilight {
+  background-color: var(--main-color);
+  color: black;
+  height: 1rem;
+}

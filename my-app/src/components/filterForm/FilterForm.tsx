@@ -1,6 +1,6 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { filterNoteAction, setIsFilterAction } from '../../redux/note-slice/noteSlice';
 import { IFilterQuery } from '../../types/type';
 import ButtonFilterNote from '../../ui/ButtonFilterNote';
@@ -9,11 +9,17 @@ import './filterFormStyle.css';
 
 export default function FilterForm() {
   const dispatch = useAppDispatch();
+  const filterQuery = useAppSelector((state) => state.noteSlice.query);
   const {
     register,
     handleSubmit,
     formState: { isValid },
-  } = useForm<IFilterQuery>({ mode: 'all' });
+  } = useForm<IFilterQuery>({
+    mode: 'all',
+    defaultValues: {
+      filterQuery,
+    },
+  });
 
   const filterHandler: SubmitHandler<IFilterQuery> = (formData: IFilterQuery) => {
     const { filterQuery } = formData;

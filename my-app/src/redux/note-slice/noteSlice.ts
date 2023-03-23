@@ -69,6 +69,7 @@ export const noteSlice = createSlice({
     resetFilterAction(state) {
       state.isFilter = false;
       state.filteredNoteList = [];
+      state.query = '';
     },
   },
 });
