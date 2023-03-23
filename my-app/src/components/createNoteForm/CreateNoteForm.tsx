@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppDispatch } from '../../redux/hooks';
-import { setNoteToListAction } from '../../redux/note-slice/noteSlice';
+import { resetFilterAction, setNoteToListAction } from '../../redux/note-slice/noteSlice';
 import { INote, INoteFormData } from '../../types/type';
 import './createNoteFormStyle.css';
 
@@ -15,14 +15,19 @@ export default function CreateNoteForm() {
   } = useForm<INoteFormData>({ mode: 'onBlur' });
 
   const noteCreateHandler: SubmitHandler<INoteFormData> = (formData: INoteFormData) => {
+    const isTag =
+      formData.title.split(' ').some((word) => word[0] === '#') ||
+      formData.description.split(' ').some((word) => word[0] === '#');
+    console.log(isTag);
     const id = Date.now().toString();
     const currentNote: INote = {
       id,
       title: formData.title,
       description: formData.description,
+      isTag,
     };
-    console.log(currentNote);
     dispatch(setNoteToListAction(currentNote));
+    dispatch(resetFilterAction());
   };
 
   useEffect(() => {

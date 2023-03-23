@@ -2,6 +2,7 @@
 :root {
   --main-bg: #000000;
   --main-color: green;
+  --main-red-color: red;
 }
 
 *,
@@ -18,7 +19,8 @@
 }
 .App {
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   font-family: 'Roboto Mono', monospace;
   background: var(--main-bg);
@@ -38,6 +40,7 @@
   width: 100%;
   border: 0 none;
 }
+
 .note-form-input_title,
 .edit-form-input_title {
   display: flex;
@@ -54,7 +57,8 @@
 }
 
 .note-form-input_title:focus,
-.edit-form-input_title:focus {
+.edit-form-input_title:focus,
+.filter-form-input_query:focus {
   outline: none;
   border: 1px dashed var(--main-color);
   border-radius: 3px;
