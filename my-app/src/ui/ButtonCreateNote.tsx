@@ -1,5 +1,6 @@
 import React from 'react';
 import { CreateNoteSVG } from './svgButtons';
+import './buttons.scss';
 interface IProp {
   isValid: boolean;
 }

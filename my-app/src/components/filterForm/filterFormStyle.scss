@@ -8,7 +8,21 @@
   margin-top: -16px;
   margin-bottom: 15px;
   overflow: hidden;
+
+  .filter-form-input_query {
+    display: flex;
+    width: 100%;
+    min-height: 24px;
+    border: none;
+    border-bottom: 1px dashed var(--main-color);
+    background: transparent;
+    color: var(--main-color);
+    padding: 1px 3px;
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+  }
 }
+
 .filter-form fieldset {
   display: flex;
   flex-direction: column;
@@ -19,15 +33,4 @@
   border: 0 none;
 }
 
-.filter-form-input_query {
-  display: flex;
-  width: 100%;
-  min-height: 24px;
-  border: none;
-  border-bottom: 1px dashed var(--main-color);
-  background: transparent;
-  color: var(--main-color);
-  padding: 1px 3px;
-  font-size: 1.2rem;
-  margin-bottom: 3px;
-}
+

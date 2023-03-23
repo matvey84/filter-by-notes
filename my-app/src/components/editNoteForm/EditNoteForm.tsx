@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { editNoteAction } from '../../redux/note-slice/noteSlice';
 import { INoteFormData, INote } from '../../types/type';
-import './editNoteFormStyle.css';
+import './editNoteFormStyle.scss';
 interface IProp {
   id: string;
   setIsEdit: (isEdit: boolean) => void;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { EditTaskSVG } from './svgButtons';
-import './buttons.css';
+import './buttons.scss';
 
 interface IProp {
   id: string;

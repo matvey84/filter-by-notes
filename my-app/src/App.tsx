@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import CreateNoteForm from './components/createNoteForm/CreateNoteForm';
 import FilterForm from './components/filterForm/FilterForm';
 import NoteList from './components/noteList/NoteList';

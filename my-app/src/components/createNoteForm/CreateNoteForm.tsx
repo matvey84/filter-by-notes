@@ -4,7 +4,7 @@ import { useAppDispatch } from '../../redux/hooks';
 import { resetFilterAction, setNoteToListAction } from '../../redux/note-slice/noteSlice';
 import { INote, INoteFormData } from '../../types/type';
 import ButtonCreateNote from '../../ui/ButtonCreateNote';
-import './createNoteFormStyle.css';
+import './createNoteFormStyle.scss';
 
 export default function CreateNoteForm() {
   const dispatch = useAppDispatch();

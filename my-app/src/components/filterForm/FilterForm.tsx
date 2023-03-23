@@ -5,7 +5,7 @@ import { filterNoteAction, setIsFilterAction } from '../../redux/note-slice/note
 import { IFilterQuery } from '../../types/type';
 import ButtonFilterNote from '../../ui/ButtonFilterNote';
 import ButtonResetFilter from '../../ui/ButtonResetFilter';
-import './filterFormStyle.css';
+import './filterFormStyle.scss';
 
 export default function FilterForm() {
   const dispatch = useAppDispatch();

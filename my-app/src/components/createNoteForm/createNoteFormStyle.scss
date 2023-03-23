@@ -1,0 +1,14 @@
+.note-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid var(--main-color);
+  padding: 5px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+

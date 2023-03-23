@@ -4,7 +4,7 @@ import { INote } from '../../types/type';
 import { ButtonRemoveCurrentNote } from '../../ui/ButtonDeleteColumn';
 import { ButtonEditNote } from '../../ui/ButtonEditNote';
 import EditNoteForm from '../editNoteForm/EditNoteForm';
-import './noteItemStyle.css';
+import './noteItemStyle.scss';
 interface IProp {
   index: number;
   note: INote;
@@ -27,7 +27,7 @@ function NoteItem(props: IProp) {
       {isEdit ? (
         <EditNoteForm id={id} setIsEdit={setIsEdit} isEdit={isEdit} />
       ) : (
-        <div className={isEdit ? 'hide-note' : 'note'} id={id}>
+        <div className="note" id={id}>
           {isTag ? <div className="tag-label">This is Tag</div> : <></>}
           <div className="note_contetnt">
             <h3 className="note-item_title" ref={titleRef}>

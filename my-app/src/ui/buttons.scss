@@ -1,0 +1,181 @@
+.button-edit-note,
+.button-delete-note,
+.filter-form_submit-button,
+.button-reset-filter {
+    width: 25px;
+    height: 25px;
+    background-color: initial;
+    border: none;
+    cursor: pointer;
+    margin: auto 5px auto 4px;
+}
+.button-reset-filter {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  border: 1px solid var(--main-red-color);
+  border-radius: 3px;
+  transition: all .5s;
+}
+
+.button-reset-filter:hover {
+  box-shadow: 0px 0px 12px 5px rgba(255, 0, 0, 0.2) inset;
+}
+
+.button-reset-filter:disabled {
+  right: -100%;
+  transition: all .5s;
+}
+
+.button-reset-filter svg path {
+  stroke: none; 
+  stroke-width: 1; 
+  stroke-dasharray: none; 
+  stroke-linecap: butt; 
+  stroke-linejoin: miter; 
+  stroke-miterlimit: 10; 
+  fill: var(--main-red-color); 
+  fill-rule: nonzero; 
+  opacity: 1;
+  transform: matrix(1 0 0 1 0 0);
+}
+.button-reset-filter:active svg path {
+  fill: var(--main-color)
+}
+
+.button-reset-filter:active {
+  border-color: var(--main-color);
+}
+
+.filter-form_submit-button {
+  width: 100%;
+  height: 25px;
+  background-color: initial;
+  border: none;
+  cursor: pointer;
+  margin: auto 5px auto 4px;
+}
+
+.filter-form_submit-button svg path {
+  stroke: none; 
+  stroke-width: 1;
+  stroke-dasharray: none; 
+  stroke-linecap: butt; 
+  stroke-linejoin: miter; 
+  stroke-miterlimit: 10; 
+  fill: var(--main-color); 
+  fill-rule: nonzero; 
+  opacity: 1;
+  transform: matrix(1 0 0 1 0 0);
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.filter-form_submit-button:hover:disabled {
+  outline: 1px solid var(--main-color);
+  border-radius: 3px;
+  box-shadow: 0px 0px 12px 5px rgba(255, 0, 0, 0.2) inset;
+}
+
+.button-edit-note:hover,
+.button-delete-note:hover,
+.filter-form_submit-button:hover {
+    outline: 1px solid var(--main-color);
+    border-radius: 3px;
+    box-shadow: 0px 0px 12px 5px rgba(0, 128, 0, 0.2) inset;
+}
+
+.button-delete-note svg,
+.filter-form_submit-button svg,
+.button-reset-filter svg {
+    height: 100%;
+    width: 100%;
+}
+
+.button-edit-note .svg-icon {
+  overflow: hidden;
+  height: 85%;
+  width: 85%;
+
+  path {
+    fill: var(--main-color);
+    height: 90%;
+    width: 90%;
+  }
+}
+
+.button-edit-note:active,
+.button-delete-note:active,
+.filter-form_submit-button:active {
+  background: var(--main-color);
+  border-radius: 3px;
+}
+
+.button-edit-note:active .svg-icon path,
+.button-delete-note:active svg path,
+.filter-form_submit-button:active svg path {
+  fill: black;
+}
+
+.button-delete-note svg path {
+    fill: var(--main-red-color);
+}
+.button-delete-note:active svg path {
+  fill: var(--main-red-color);
+}
+
+.note-form_submit-button {
+  width: 100%;
+  height: 32px;
+  margin: 1.5px auto;
+  border-color: var(--main-color);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--main-color);
+}
+
+.note-form_submit-button svg {
+  height: 100%;
+  width: 25px;
+
+  g {
+    stroke: none; 
+    stroke-width: 0; 
+    stroke-dasharray: none; 
+    stroke-linecap: butt; 
+    stroke-linejoin: miter; 
+    stroke-miterlimit: 10; 
+    fill: none; 
+    fill-rule: nonzero; 
+    opacity: 1;
+    transform: translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81);
+    
+    polygon {
+      stroke: none; 
+      stroke-width: 1; 
+      stroke-dasharray: none; 
+      stroke-linecap: butt; 
+      stroke-linejoin: miter; 
+      stroke-miterlimit: 10; 
+      fill: var(--main-color); 
+      fill-rule: nonzero; 
+      opacity: 1;
+      transform: matrix(1 0 0 1 0 0)
+    }
+  }
+}
+
+.note-form_submit-button:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 12px 5px rgba(0, 128, 0, 0.2) inset;
+}
+.note-form_submit-button:hover:disabled{
+  border-radius: 3px;
+  box-shadow: 0px 0px 12px 5px rgba(255, 0, 0, 0.2) inset;
+}
+.note-form_submit-button:active{
+  transform: scale(0.99);
+  border: none;
+}
+
+

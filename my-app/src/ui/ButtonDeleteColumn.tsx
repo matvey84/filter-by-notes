@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppDispatch } from '../redux/hooks';
 import { removeCurrentNoteAction } from '../redux/note-slice/noteSlice';
 import { DeleteNoteSVG } from './svgButtons';
-import './buttons.css';
+import './buttons.scss';
 
 interface IProp {
   id: string;
