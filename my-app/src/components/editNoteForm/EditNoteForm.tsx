@@ -34,6 +34,7 @@ function EditNoteForm(props: IProp) {
       id: editedNoteid,
       title: formData.title,
       description: formData.description,
+      isTag: currentNote.isTag,
     };
     formData.title === currentNote.title && formData.description === currentNote.description
       ? null

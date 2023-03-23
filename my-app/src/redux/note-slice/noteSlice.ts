@@ -2,22 +2,30 @@ import { INote } from '../../types/type';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface INoteSlice {
-  note: INote;
+  // note: INote;
   noteList: INote[];
+  filteredNoteList: INote[];
+  isFilter: boolean;
+  query: string;
 }
 const initialState: INoteSlice = {
-  note: {
-    id: '',
-    title: '',
-    description: '',
-  },
+  // note: {
+  //   id: '',
+  //   title: '',
+  //   description: '',
+  //   isTag: boolean;ean
+  // },
   noteList: [],
+  filteredNoteList: [],
+  isFilter: false,
+  query: '',
 };
 export const noteSlice = createSlice({
   name: 'note',
   initialState,
   reducers: {
     setNoteToListAction(state, action: PayloadAction<INote>) {
+      console.log(action.payload);
       state.noteList = [...state.noteList, action.payload];
     },
     removeNoteFromListAction(state, action: PayloadAction<string>) {
@@ -35,6 +43,32 @@ export const noteSlice = createSlice({
     },
     removeCurrentNoteAction(state, action: PayloadAction<string>) {
       state.noteList = state.noteList.filter((note) => note.id !== action.payload);
+      if (state.isFilter) {
+        state.noteList = state.noteList.filter((note) => note.id !== action.payload);
+        state.filteredNoteList = state.filteredNoteList.filter(
+          (note) => note.id !== action.payload
+        );
+      }
+    },
+    filterNoteAction(state, action: PayloadAction<string>) {
+      state.query = action.payload;
+      const result = Array.from(
+        new Set(
+          state.noteList.filter(
+            (note) =>
+              note.title.toLocaleLowerCase().includes(action.payload.toLocaleLowerCase()) ||
+              note.description.toLocaleLowerCase().includes(action.payload.toLowerCase())
+          )
+        )
+      );
+      state.filteredNoteList = result;
+    },
+    setIsFilterAction(state, action: PayloadAction<boolean>) {
+      state.isFilter = action.payload;
+    },
+    resetFilterAction(state) {
+      state.isFilter = false;
+      state.filteredNoteList = [];
     },
   },
 });
@@ -43,5 +77,8 @@ export const {
   removeNoteFromListAction,
   editNoteAction,
   removeCurrentNoteAction,
+  filterNoteAction,
+  setIsFilterAction,
+  resetFilterAction,
 } = noteSlice.actions;
 export default noteSlice.reducer;

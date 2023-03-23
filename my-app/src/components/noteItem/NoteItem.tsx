@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
+import { useAppSelector } from '../../redux/hooks';
 import { INote } from '../../types/type';
 import { ButtonRemoveCurrentNote } from '../../ui/ButtonDeleteColumn';
 import { ButtonEditNote } from '../../ui/ButtonEditNote';
@@ -9,8 +10,9 @@ interface IProp {
   note: INote;
 }
 function NoteItem(props: IProp) {
-  const { id, title, description } = props.note;
+  const { id, title, description, isTag } = props.note;
   const [isEdit, setIsEdit] = useState<boolean>(false);
+  const queryString = useAppSelector((state) => state.noteSlice.query);
 
   return (
     <>
@@ -18,6 +20,7 @@ function NoteItem(props: IProp) {
         <EditNoteForm id={id} setIsEdit={setIsEdit} isEdit={isEdit} />
       ) : (
         <div className={isEdit ? 'hide-note' : 'note'} id={id}>
+          {isTag ? <div className="tag-label">This is Tag</div> : null}
           {/* <div className="todo-item-date-block">
             <span className="add-todo">Add: {props.todo.date}</span>
           </div> */}
