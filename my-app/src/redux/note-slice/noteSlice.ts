@@ -2,19 +2,12 @@ import { INote } from '../../types/type';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface INoteSlice {
-  // note: INote;
   noteList: INote[];
   filteredNoteList: INote[];
   isFilter: boolean;
   query: string;
 }
 const initialState: INoteSlice = {
-  // note: {
-  //   id: '',
-  //   title: '',
-  //   description: '',
-  //   isTag: boolean;ean
-  // },
   noteList: [],
   filteredNoteList: [],
   isFilter: false,

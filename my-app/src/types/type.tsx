@@ -8,7 +8,6 @@ export interface INoteFormData {
   title: string;
   description: string;
 }
-export interface IFilterQuery {
+export type IFilterQuery = {
   filterQuery: string;
-  // filterCategory: string;
-}
+};

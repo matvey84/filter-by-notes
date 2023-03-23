@@ -7,12 +7,7 @@ function ButtonCreateNote(props: IProp) {
   const isValid = props.isValid;
   return (
     <>
-      <button
-        disabled={!isValid}
-        className="note-form_submit-button"
-        type="submit"
-        // onClick={(e: React.MouseEvent<HTMLButtonElement>) => removeNote(e)}
-      >
+      <button disabled={!isValid} className="note-form_submit-button" type="submit">
         <CreateNoteSVG />
       </button>
     </>
