@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { filterNoteAction, setIsFilterAction } from '../../redux/note-slice/noteSlice';
@@ -10,9 +10,12 @@ import './filterFormStyle.css';
 export default function FilterForm() {
   const dispatch = useAppDispatch();
   const filterQuery = useAppSelector((state) => state.noteSlice.query);
+  const isFilter = useAppSelector((state) => state.noteSlice.query);
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { isValid },
   } = useForm<IFilterQuery>({
     mode: 'all',
@@ -27,10 +30,14 @@ export default function FilterForm() {
     dispatch(setIsFilterAction(true));
   };
 
+  useLayoutEffect(() => {
+    !isFilter && reset();
+  }, [isFilter, reset]);
+
   return (
     <>
       <form className="filter-form" onSubmit={handleSubmit(filterHandler)}>
-        <ButtonResetFilter />
+        <ButtonResetFilter reset={reset} />
         <fieldset>
           <legend> Filter</legend>
           <input

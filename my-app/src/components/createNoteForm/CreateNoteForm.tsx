@@ -18,7 +18,7 @@ export default function CreateNoteForm() {
     const isTag =
       formData.title.split(' ').some((word) => word[0] === '#') ||
       formData.description.split(' ').some((word) => word[0] === '#');
-    console.log(isTag);
+
     const id = Date.now().toString();
     const currentNote: INote = {
       id,
@@ -50,7 +50,7 @@ export default function CreateNoteForm() {
             className="note-form-input_title"
             type="text"
             id="note-title"
-            placeholder="Title"
+            placeholder="Title: [should be min 5 character]"
           />
         </fieldset>
         <fieldset>
@@ -63,7 +63,7 @@ export default function CreateNoteForm() {
                 message: 'Should be min 5 character',
               },
             })}
-            placeholder="Description"
+            placeholder="Description: [should be min 5 character]"
             className="note-form-input_description"
           />
         </fieldset>

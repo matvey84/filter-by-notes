@@ -25,7 +25,6 @@ export const noteSlice = createSlice({
   initialState,
   reducers: {
     setNoteToListAction(state, action: PayloadAction<INote>) {
-      console.log(action.payload);
       state.noteList = [...state.noteList, action.payload];
     },
     removeNoteFromListAction(state, action: PayloadAction<string>) {
@@ -56,8 +55,7 @@ export const noteSlice = createSlice({
         new Set(
           state.noteList.filter(
             (note) =>
-              note.title.toLocaleLowerCase().includes(action.payload.toLocaleLowerCase()) ||
-              note.description.toLocaleLowerCase().includes(action.payload.toLowerCase())
+              note.title.includes(action.payload) || note.description.includes(action.payload)
           )
         )
       );
